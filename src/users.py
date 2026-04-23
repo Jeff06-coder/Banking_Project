@@ -10,7 +10,7 @@ users = {
 },
     'Jefferson': {
         'senha': 'adm',
-        'saldo' : 3000
+        'saldo' : 99999999
 },
 }
 
