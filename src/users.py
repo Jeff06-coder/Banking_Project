@@ -7,7 +7,11 @@ users = {
     'Bob': {
         'senha': '5678',
         'saldo' : 500
-}
+},
+    'Jefferson': {
+        'senha': 'adm',
+        'saldo' : 3000
+},
 }
 
 # Função para identificar o usuário e liberar o acesso
