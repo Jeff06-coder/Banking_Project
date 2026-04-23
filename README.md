@@ -31,3 +31,7 @@ Para este projeto de sistema bancário, seguimos as melhores práticas de desenv
 
 ## templates
 A *pasta* templates tem em si, arquivos *.html* para serem usados como interfaces, que são redirecionados ao *app.py*. Dentro desses arquivos, á a presença de estilização da página e seus dados, são passados os dados para o app.py usando metodos HTTPS e ações como *from* e *actions*.
+
+## operations.py
+O local onde é feito os calculo de saque e depósito, assim é passado esse arquivo para o app.py, onde será utilizado pelo user.
+Existe uma *route* dedicado para essa operação, onde é feito o calculo, traz e resultado para o back e o user é direcionado a parte de saque e depósito novamente com os dados atualizados.

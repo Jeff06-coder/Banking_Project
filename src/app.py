@@ -3,6 +3,7 @@
 from flask import Flask, request, render_template, redirect, session
 # Importando users.py para acessar os dados dos usuários
 from users import indentificar_usuario
+from operations import processar_operacao
 
 # Criando uma instância da aplicação Flask
 app = Flask(__name__)
@@ -55,6 +56,25 @@ def dashboard():
 def logout():
     session.clear() # Destrói o crachá
     return redirect('/')
+
+
+@app.route('/operacao', methods=['POST'])
+def operacao():
+    if 'usuario_id' not in session:
+        return redirect('/')
+    
+    # Pegamos os dados do formulário
+    id_usuario = session['usuario_id']
+    tipo = request.form.get('tipo')
+    valor = float(request.form.get('valor'))
+
+    sucesso, mesagem = processar_operacao(id_usuario, tipo, valor)
+
+    if sucesso:
+        return redirect('/dashboard')
+    else: 
+        return f"<h1>{mesagem}</h1><a href='/dashboard'>Voltar</a>", 400
+
 
 
 if __name__ == '__main__':
