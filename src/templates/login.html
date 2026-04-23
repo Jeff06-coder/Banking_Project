@@ -1,16 +1,83 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Meu Banco Seguro</title>
-    </head>
-    <body>
-        <h2>Login do Banco</h2>
-        <form action="/login" method="get">
-            <input type="text" name="user" placeholder="Usuário" required>
-            <input type="password" name="senha" placeholder="Senha" required>
-            <!--Ele não apenas clica; ele dá a ordem para o formulário ser empacotado e enviado para o action que você definiu-->
-            <button type="submit">Entrar no Banco</button>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Meu Banco Seguro - Login</title>
+    <style>
+        /* 1. Reset e Fundo */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5; /* Cinza claro de fundo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
 
+        /* 2. O Card de Login */
+        .login-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 350px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #1a73e8; /* Azul bancário */
+            margin-bottom: 25px;
+        }
+
+        /* 3. Inputs (Caixinhas de texto) */
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box; /* Garante que o padding não aumente o tamanho da caixa */
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #1a73e8; /* Muda a cor ao clicar */
+        }
+
+        /* 4. O Botão */
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background-color: #1557b0; /* Escurece ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>🏦 Banco Python</h2>
+        <form action="/login" method="POST">
+            <input type="text" name="user" placeholder="Digite seu usuário" required>
+            <input type="password" name="senha" placeholder="Digite sua senha" required>
+            
+            <button type="submit">Acessar Conta</button>
         </form>
-    </body>
+    </div>
+
+</body>
 </html>
